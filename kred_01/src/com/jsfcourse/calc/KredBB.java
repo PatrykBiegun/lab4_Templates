@@ -55,7 +55,7 @@ public class KredBB{
 		try {
 			double x = Double.parseDouble(this.x);
 			double y = Double.parseDouble(this.y);
-			double z = Double.parseDouble(this.y);
+			double z = Double.parseDouble(this.z);
 			
 			result = ((z/100 * x) + x)/(y*12);
 			 
@@ -65,7 +65,7 @@ public class KredBB{
 			return true;
 		} catch (Exception e) {
 			ctx.addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "blad podczas przetwarzania parametrÃ³w", null));
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "blad podczas przetwarzania parametrów", null));
 			return false;
 		}
 	}

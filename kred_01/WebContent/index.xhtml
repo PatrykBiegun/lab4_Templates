@@ -3,28 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
 <h:head>
-	<title>Kredyt - 1 labolatoria</title>
+	<title>Kredyt - 2 labolatoria prime faces</title>
 </h:head>
 <h:body>
 
-	<h1>Kredyt - 1 labolatoria</h1>
+	<h1>Kredyt - 2 labolatoria prime faces</h1>
 
 	<h:form id="bla">
-  		Kwota: <h:inputText value="#{kredBB.x}" />
-		<br />
-  		Na ile lat: <h:inputText value="#{kredBB.y}" />
-		<br />
-		Oprocentowanie: <h:inputText value="#{kredBB.z}" />
-		<br />
+		<p:panel header="Kalkulator Kredytowy">
+				
+		<h:panelGrid id = "grid" columns = "3" cellpadding = "7">
 		
-		<h:messages id="msg" />
-		<br />
+				<p:outputLabel for = "x" value = "Kwota:"/>
+		        <p:inputText id = "x" value = "#{kredBB.x}" required = "true" requiredMessage = "Nie podano kwoty"/>
+		        <p:message for = "x"/>
+		        
 		
-		<h:commandButton value="Oblicz" action="#{kredBB.calc()}"/>
-		<br/>
-	</h:form>
-
+		<p:outputLabel for = "y" value = "Na ile lat"/>
+		        <p:inputText id = "y" value = "#{kredBB.y}" required = "true" requiredMessage = "Nie podano lat"/>
+		        <p:message for = "y"/>
+		
+		<p:outputLabel for = "z" value = "Procent:"/>
+		        <p:inputText id = "z" value = "#{kredBB.z}" required = "true" requiredMessage = "Nie podano procentów"/>
+		        <p:message for = "z"/>
+		
+		
+		
+					</h:panelGrid>
+		
+			<p:commandButton value = "Oblicz" action = "#{kredBB.calc()}" update = "@form"/>
+		 	
+		 	 </p:panel>
+		
+			</h:form>
+			
+ 	
 </h:body>
 </html>
