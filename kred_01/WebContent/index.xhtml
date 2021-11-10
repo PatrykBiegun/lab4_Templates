@@ -7,11 +7,11 @@
 	xmlns:p="http://primefaces.org/ui">
 	
 <h:head>
-	<title>Kredyt - 2 labolatoria prime faces</title>
+	<title>Kredyt - 3 labolatoria walidacja</title>
 </h:head>
 <h:body>
 
-	<h1>Kredyt - 2 labolatoria prime faces</h1>
+	<h1>Kredyt - 3 labolatoria walidacja</h1>
 
 	<h:form id="bla">
 		<p:panel header="Kalkulator Kredytowy">
@@ -19,16 +19,22 @@
 		<h:panelGrid id = "grid" columns = "3" cellpadding = "7">
 		
 				<p:outputLabel for = "x" value = "Kwota:"/>
-		        <p:inputText id = "x" value = "#{kredBB.x}" required = "true" requiredMessage = "Nie podano kwoty"/>
+		        <p:inputText id = "x" value = "#{kredBB.x}" required = "true" requiredMessage = "Nie podano kwoty" converterMessage = "Kwota musi być liczbą całkowitą" validatorMessage = "Kwota musi wynosić przynajmniej 500">>
+		        <f:validateDoubleRange minimum = "500"/>
+		        </p:inputText>
 		        <p:message for = "x"/>
 		        
 		
 		<p:outputLabel for = "y" value = "Na ile lat"/>
-		        <p:inputText id = "y" value = "#{kredBB.y}" required = "true" requiredMessage = "Nie podano lat"/>
+		        <p:inputText id = "y" value = "#{kredBB.y}" required = "true" requiredMessage = "Nie podano lat" converterMessage = "Okres spłaty musi być liczbą całkowitą" validatorMessage = "Okres spłaty musi wynosić przynajmniej 1 i nie może byc wiekszy od 20">>
+		       <f:validateDoubleRange minimum = "1" maximum = "30"/>
+		       		        </p:inputText>
 		        <p:message for = "y"/>
 		
 		<p:outputLabel for = "z" value = "Procent:"/>
-		        <p:inputText id = "z" value = "#{kredBB.z}" required = "true" requiredMessage = "Nie podano procentów"/>
+		        <p:inputText id = "z" value = "#{kredBB.z}" required = "true" requiredMessage = "Nie podano procentów" converterMessage = "Oprocentowanie musi być liczbą" validatorMessage = "Oprocentowanie musi byc liczbą z akresu od 0.01 do 89.99">>
+		        <f:validateDoubleRange minimum = "0.01" maximum = "89.99"/>
+		        </p:inputText>
 		        <p:message for = "z"/>
 		
 		
