@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	
-<h:head>
-	<title>Kredyt - 3 labolatoria walidacja</title>
-</h:head>
-<h:body>
+<ui:composition template="/templates/main.xhtml">
+	
+<ui:define name = "title">
+	Labolatorium 4 - Templates
+</ui:define>
 
-	<h1>Kredyt - 3 labolatoria walidacja</h1>
+<ui:define name ="content">
+	
 
-	<h:form id="bla">
+	
 		<p:panel header="Kalkulator Kredytowy">
+		
+			<h:form id="bla">
 				
 		<h:panelGrid id = "grid" columns = "3" cellpadding = "7">
 		
@@ -43,10 +47,13 @@
 		
 			<p:commandButton value = "Oblicz" action = "#{kredBB.calc()}" update = "@form"/>
 		 	
-		 	 </p:panel>
+		 	
 		
 			</h:form>
 			
- 	
-</h:body>
+ 	 </p:panel>
+ 	 
+</ui:define>
+
+</ui:composition>
 </html>

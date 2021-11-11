@@ -64,7 +64,7 @@ public class KredBB{
 			return true;
 		} catch (Exception e) {
 			ctx.addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "blad podczas przetwarzania parametrów", null));
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "blad podczas przetwarzania parametrÃ³w", null));
 			return false;
 		}
 	}
